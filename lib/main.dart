@@ -3,8 +3,31 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod_hooks_todo_list/todo.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+final todoListProvider = StateNotifierProvider<TodoList, List<Todo>>(
+  (_) {
+    return TodoList([
+      Todo(
+        id: 'todo-0',
+        description: 'hi',
+      ),
+      Todo(
+        id: 'todo-0',
+        description: 'hi',
+      ),
+      Todo(
+        id: 'todo-0',
+        description: 'hi',
+      ),
+    ]);
+  },
+);
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ProviderScope(
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
