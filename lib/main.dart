@@ -3,25 +3,31 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod_hooks_todo_list/todo.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+/* -------------------------------------------------------------------------- */
+/*                            StateNotifierProvider                           */
+/* -------------------------------------------------------------------------- */
 final todoListProvider = StateNotifierProvider<TodoList, List<Todo>>(
   (_) {
-    return TodoList([
-      Todo(
-        id: 'todo-0',
-        description: 'hi',
-      ),
-      Todo(
-        id: 'todo-0',
-        description: 'hi',
-      ),
-      Todo(
-        id: 'todo-0',
-        description: 'hi',
-      ),
-    ]);
+    return TodoList(
+      [
+        Todo(
+          id: 'todo-0',
+          description: 'hi',
+        ),
+        Todo(
+          id: 'todo-0',
+          description: 'hi',
+        ),
+        Todo(
+          id: 'todo-0',
+          description: 'hi',
+        ),
+      ],
+    );
   },
 );
 
+//30:11
 void main() {
   runApp(
     ProviderScope(
